@@ -50,7 +50,7 @@ public class CarController {
 	private String deleteCar(@PathVariable("carId") long id, Model model) {
 		CarModel deleteCar = carService.getCarDetailById(id).get();
 		carService.deleteCar(deleteCar);
-		return "Success";
+		return "Car has been deleted";
 	}
 
 	@PutMapping(value = "/{carId}")

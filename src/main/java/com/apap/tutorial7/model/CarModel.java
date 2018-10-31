@@ -17,9 +17,6 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 @Entity
 @Table(name = "car")
 
@@ -49,7 +46,7 @@ public class CarModel implements Serializable {
 	@ManyToOne(fetch= FetchType.EAGER)
 	@JoinColumn(name="dealer_id",referencedColumnName = "id",nullable=false)
 	@OnDelete(action=OnDeleteAction.NO_ACTION)
-	@JsonProperty("carDealer")
+	//@JsonProperty("carDealer")
 	private DealerModel dealer;
 
 	public long getId() {

@@ -48,7 +48,7 @@ public class DealerController {
 	private String deleteDealer(@RequestParam("dealerId") long id, Model model) {
 		DealerModel deleteDealer = dealerService.getDealerDetailById(id).get();
 		dealerService.deleteDealer(deleteDealer);
-		return "Car has been deleted";
+		return "Success delete";
 	}
 
 	@PutMapping(value = "/{id}")

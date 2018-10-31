@@ -15,7 +15,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -41,8 +40,7 @@ public class DealerModel implements Serializable{
 	
 	//fetchType lazy harus get dulu
 	@OneToMany(mappedBy = "dealer", fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-	@JsonProperty("listCar")
-
+	@JsonIgnore
 	private List<CarModel> listCar;
 
 	public long getId() {
